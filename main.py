@@ -7,10 +7,11 @@ class Aplication():
     def __init__(self):
         self.root = root
         self.tela()
-        self.frames()
+        # self.frames()
         self.botoes()
         self.labels()
-        self.entrys()
+        # self.text_box()
+        # self.entrys()
         root.mainloop()
     def tela(self):
         self.root.title("Gerador de Senha")
@@ -18,9 +19,9 @@ class Aplication():
         self.root.geometry('380x250')
         self.root.resizable(False, False) # Não irá permitir expandir a tela
 
-    def frames(self):
-        self.frame_1 = Frame(self.root, bd=4, bg='white')
-        self.frame_1.place(relx=0.05, rely=0.4, relheight=0.52, relwidth=0.9)
+    # def frames(self):
+    #     self.frame_1 = Frame(self.root, bd=4, bg='white')
+    #     self.frame_1.place(relx=0.05, rely=0.4, relheight=0.52, relwidth=0.9)
 
     def botoes(self):
         self.botao_gerar = Button(text='Gerar senha', command=self.gerar_senha) ##### RESOLVIDO
@@ -29,8 +30,7 @@ class Aplication():
     def labels(self):
         self.lb_senha_gerada = Label(text='Senha gerada:',bg='gray',fg='white')
         self.lb_senha_gerada.place(relx=0.05,rely=0.3, relheight=0.07, relwidth=0.2)
-    def entrys(self):
-        self.saida_de_dados = Entry()
+
         
     def gerar_senha(self):
         self.letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -54,6 +54,7 @@ class Aplication():
             elif self.qual_o_proximo == 3:
                 self.algarismo_aleatorio = random.choice(self.simbolos)
                 self.senha_gerada = self.senha_gerada + self.algarismo_aleatorio
-            print(self.senha_gerada)
+                print(self.senha_gerada)
+        
         
 Aplication()
