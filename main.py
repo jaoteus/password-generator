@@ -28,8 +28,14 @@ class Aplication():
         self.botao_gerar.place(relx=0.42, rely=0.1, relheight=0.1, relwidth= 0.2)
 
     def labels(self):
+        self.msg = ''
         self.lb_senha_gerada = Label(text='Senha gerada:',bg='gray',fg='white')
-        self.lb_senha_gerada.place(relx=0.05,rely=0.3, relheight=0.07, relwidth=0.2)
+        self.lb_senha_gerada.place(relx=0.41,rely=0.3, relheight=0.07, relwidth=0.2)
+        self.lb_texto_da_senha = Text(self.root, width=10, height=10)
+        self.lb_texto_da_senha.pack(expand=True)
+        self.lb_texto_da_senha.insert('end', self.msg)
+        self.lb_texto_da_senha.config(state='disabled')
+        self.lb_texto_da_senha.place(relx=0.1, rely=0.5, relheight=0.1, relwidth=0.1)
 
         
     def gerar_senha(self):
